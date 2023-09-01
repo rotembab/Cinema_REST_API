@@ -17,7 +17,7 @@ database.once("connected", () => {
 });
 
 const app = express();
-app.use(express.json);
+app.use(express.json());
 app.listen(8000, () => {
   console.log("Server is listening on PORT:8000 ");
 });

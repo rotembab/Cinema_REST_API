@@ -1,3 +1,4 @@
+const model = require("../models/model");
 const express = require("express");
 
 const router = express.Router();
@@ -10,10 +11,11 @@ router.get("/getAll", (req, res) => {
 });
 
 router.get("/getOne/:id", (req, res) => {
-  res.send("Get by id");
+  res.send(req.params.id);
 });
 
 router.post("/post", (req, res) => {
+  const data = new Model({ name: req.body.name, age: req.body.age });
   res.send("Post ");
 });
 
