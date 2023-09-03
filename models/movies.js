@@ -28,6 +28,7 @@ const dataSchema = new mongoose.Schema({
     {
       required: true,
       enum: ["2D", "3D", "4DX", "SCREENX", "IMAX"],
+      type: String,
     },
   ],
   ageStrict: {
@@ -35,3 +36,5 @@ const dataSchema = new mongoose.Schema({
     type: Number,
   },
 });
+
+module.exports = mongoose.model("Movies", dataSchema);
