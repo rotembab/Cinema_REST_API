@@ -1,4 +1,4 @@
-const model = require("../models/movies");
+const model = require("../models/users");
 const express = require("express");
 
 const router = express.Router();
@@ -27,13 +27,9 @@ router.get("/:id", async (req, res) => {
 router.post("/post", async (req, res) => {
   const data = new model({
     name: req.body.name,
-    describtion: req.body.describtion,
-    imgSrc: req.body.imgSrc,
-    releaseDate: req.body.releaseDate,
-    movieLen: req.body.movieLen,
-    lang: req.body.lang,
-    options: req.body.options,
-    ageStrict: req.body.ageStrict,
+    username: req.body.username,
+    password: req.body.password,
+    createdDate: req.body.createdDate,
   });
   try {
     const dataToSave = await data.save();

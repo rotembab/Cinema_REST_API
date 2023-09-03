@@ -12,6 +12,10 @@ const dataSchema = new mongoose.Schema({
     reuqired: true,
     type: String,
   },
+  createdDate: {
+    reuired: true,
+    type: Date,
+  },
 });
 
 module.exports = mongoose.model("users", dataSchema);

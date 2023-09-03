@@ -19,10 +19,10 @@ const app = express();
 app.use(express.json());
 
 const movieRoutes = require("./routes/movieRoutes");
-
+const userRoutes = require("./routes/userRoutes");
 app.use("/api/movies", movieRoutes);
 //TODO: CHANGE TO USERS ROUTES
-app.use("/api/users", movieRoutes);
+app.use("/api/users", userRoutes);
 
 app.listen(8000, () => {
   console.log("Server is listening on PORT:8000 ");
