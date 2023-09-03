@@ -18,23 +18,17 @@ const dataSchema = new mongoose.Schema({
   },
   movieLen: {
     required: true,
-    type: Number, //In minutes
+    type: Number,
   },
   lang: {
     required: true,
     type: String,
   },
-  options: [
-    {
-      required: true,
-      enum: ["2D", "3D", "4DX", "SCREENX", "IMAX"],
-      type: String,
-    },
-  ],
+  options: ["2D", "3D", "4DX", "SCREENX", "IMAX"],
   ageStrict: {
     required: false,
     type: Number,
   },
 });
 
-module.exports = mongoose.model("Movies", dataSchema);
+module.exports = mongoose.model("movies", dataSchema);

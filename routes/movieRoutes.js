@@ -24,7 +24,7 @@ router.get("/:id", async (req, res) => {
   res.send(req.params.id);
 });
 
-router.post("/post", async (req, res) => {
+router.post("/", async (req, res) => {
   const data = new model({
     name: req.body.name,
     describtion: req.body.describtion,
