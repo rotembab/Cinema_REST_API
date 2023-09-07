@@ -22,9 +22,10 @@ app.use(cors());
 
 const movieRoutes = require("./routes/movieRoutes");
 const userRoutes = require("./routes/userRoutes");
+const newsRoutes = require("./routes/newsRoutes");
 app.use("/api/movies", movieRoutes);
-//TODO: CHANGE TO USERS ROUTES
 app.use("/api/users", userRoutes);
+app.use("/api/news", newsRoutes);
 
 app.listen(8000, () => {
   console.log("Server is listening on PORT:8000 ");

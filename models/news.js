@@ -1,14 +1,13 @@
 const mongoose = require("mongoose");
-
 const dataSchema = new mongoose.Schema({
-  name: {
+  heading: {
     required: true,
     type: String,
   },
-  age: {
-    required: true,
-    type: Number,
+  imgSrc: {
+    reuqired: true,
+    type: String,
   },
 });
 
-module.exports = mongoose.model("Data", dataSchema);
+module.exports = mongoose.model("news", dataSchema);
