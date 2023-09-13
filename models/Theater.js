@@ -1,11 +1,15 @@
 const mongoose = require("mongoose");
-const Movie = require("./movie");
-const ScreeningSchema = new mongoose.Schema({
-  movieName: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Movie",
+const TheaterSchema = new mongoose.Schema({
+  theaterName: {
+    type: String,
+    required: true,
   },
-  time: Date,
+  Screenings: [
+    {
+      type: String,
+      requried: true,
+    },
+  ],
 });
 
-module.exports = mongoose.model("screenings", ScreeningSchema);
+module.exports = mongoose.model("theater", TheaterSchema);
