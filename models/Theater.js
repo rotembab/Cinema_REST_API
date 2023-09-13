@@ -4,7 +4,7 @@ const TheaterSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  Screenings: [
+  screenings: [
     {
       type: String,
       requried: true,

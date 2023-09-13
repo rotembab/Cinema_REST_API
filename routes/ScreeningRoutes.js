@@ -1,4 +1,5 @@
 const model = require("../models/screenings");
+const TheaterModel = require("../models/Theater");
 const express = require("express");
 const router = express.Router();
 
@@ -33,6 +34,11 @@ router.post("/", async (req, res) => {
   try {
     const dataToSave = await data.save();
     res.status(200).json(dataToSave);
+    console.log("This is the screening: " + dataToSave.id);
+    const theater = await TheaterModel.findById(data.theaterId);
+    theater.screenings = [...theater.screenings, dataToSave.id];
+    await TheaterModel.findByIdAndUpdate(data.theaterId, theater);
+    console.log("Updated The theater also");
   } catch (error) {
     res.status(400).json({ message: error.message });
   }

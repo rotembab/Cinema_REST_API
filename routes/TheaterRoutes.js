@@ -26,7 +26,7 @@ router.get("/:id", async (req, res) => {
 router.post("/", async (req, res) => {
   const data = new model({
     theaterName: req.body.theaterName,
-    Screenings: req.body.Screenings,
+    screenings: req.body.screenings,
   });
   try {
     const dataToSave = await data.save();
