@@ -20,7 +20,6 @@ router.get("/:id", async (req, res) => {
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
-  res.send(req.params.id);
 });
 
 router.post("/", async (req, res) => {
