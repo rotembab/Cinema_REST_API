@@ -22,6 +22,15 @@ router.get("/:id", async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 });
+router.get("theater/:id", async (req, res) => {
+  //get screenings by theater id
+  try {
+    const data = await model.findById(req.params.id);
+    res.json(data);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
 
 router.post("/", async (req, res) => {
   const data = new model({
